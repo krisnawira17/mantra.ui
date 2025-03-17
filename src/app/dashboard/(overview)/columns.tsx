@@ -22,6 +22,14 @@ export const columns: ColumnDef<Manga>[] = [
     header: "Name",
   },
   {
+    accessorKey: "currentChapter",
+    header: "Current Chapter",
+    cell: ({ row }) => {
+      const chapter = row.getValue("currentChapter") as number;
+      return <div>Ch.{chapter}</div>;
+    },
+  },
+  {
     accessorKey: "status",
     header: "Status",
     cell: ({ row }) => {
